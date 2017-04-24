@@ -21,7 +21,7 @@
      *
      * Defines a context-based margin where context is the threshold.
      *
-     * @param threshold (int)
+     * @param threshold {integer}
      */
     function returnMargin( threshold ) {
         var margin = 0;
@@ -53,8 +53,8 @@
      *
      * Truncates text container, based on a number of lines.
      *
-     * @param $el (node) - the text-containing element
-     * @param maxLines (int) - the maximum number of lines to show
+     * @param $el {jQuery} - the text-containing element.
+     * @param maxLines {integer} - the maximum number of lines to show.
      *
      * 1. Quick escape if the element to truncate does not exist.
      * 2. Only take into account as direct inner elements those that are rendered
@@ -101,6 +101,8 @@
      *
      * Expands truncated text to original height to see it in its entirety.
      *
+     * @param $clickedMoreBtn {jQuery} - the clicked "more" button.
+     *
      * 1. Temporarily remove any modifiers to calculate the height of the original
      *    text.
      * 2. Add them back.
@@ -114,7 +116,7 @@
             .css('height', '')
             .removeClass(params.truncatedClass) /* [1] */
             .outerHeight();
-        $clickedMoreBtn.slideUp(params.toggleSpeedFast);
+        $clickedMoreBtn.slideUp(params.buttonHideDuration);
         $content
             .css('height', truncated_height)
             .addClass(params.truncateWrapperClass) /* [2] */
@@ -142,7 +144,7 @@
                 truncateWrapperClass: 'js-truncated-content',
                 truncatedClass: 'is-truncated',
                 toggleSpeed: 233,
-                toggleSpeedFast: 133,
+                buttonHideDuration: 133,
                 moreFunctionalClass: 'js-expand-truncated',
                 moreClasses: ['o-btn'],
                 moreLabel: $(this).data('more-label') || 'Read more',
