@@ -25,7 +25,7 @@ heightAdjustment | integer | 0 | A number of pixels to add to / remove from the 
 /**
  * 1. Remove 5px more from the cropped (calculated) height.
  */
-$('.js-truncate').spSelectToList({
+$('.js-truncate').spLineTruncation({
     moreClasses: ['o-btn', 'o-btn--link'],
     heightAdjustment: -5 /* [1] */
 });
